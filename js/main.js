@@ -1,7 +1,7 @@
 //Get the values of the string
 //Controller function
 function getValue()
-{
+{  
     document.getElementById("alert").classList.add("invisible");
 
     let userString = document.getElementById("userString").value;
@@ -9,6 +9,7 @@ function getValue()
     let reversedString = reverseString(userString);
 
     displayString(reversedString);
+    //clearForm(reversedString);
 }
 
 //Reverse the string
@@ -25,6 +26,8 @@ function reverseString(_userString)
     return reversedString;
 }
 
+
+
 //Display the reversed string to the user
 //View function 
 function displayString(_reversedString)
@@ -34,3 +37,15 @@ function displayString(_reversedString)
     // Show the alert box
     document.getElementById("alert").classList.remove("invisible");
 }
+
+//Clear string input
+//View function
+function clearForm()
+{
+    document.getElementById("alert").classList.add("invisible");
+    
+    let clearString = []    
+    clearString = "";
+    document.getElementById("userString").value = clearString;  
+}
+

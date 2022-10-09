@@ -70,12 +70,18 @@
                 <div class="col">
                     <h5 class="border-1 border-bottom border-dark">Enter a string to reverse</h5>
                     <form class="row gx-3 gy-2" action="">
-                        <div class="col">
+                        <div class="col-12">
                             <input id="userString" type="text" class="form-control" placeholder="Enter a string" aria-label="Enter a string">
                         </div>
-                        <div class="col-12 mt-4">
-                            <button type="button" id="btnSubmit" class="btn btn-dark">Reverse Text</button>
-                        </div>
+                        <div class="col">
+                            <div class="row d-flex">
+                                <div class="col mt-4">
+                                    <button type="button" id="btnSubmit" class="btn btn-dark">Reverse Text</button>
+                                    <button type="button" id="btnReset" class="btn btn-dark" >Reset Input</button>
+                                </div>
+                            </div>
+                        </div>                        
+                        
                         <div class="alert alert-danger mt-5 invisible fade show" id="alert" role="alert">
                             <h4 class="alert-heading">Well Done!</h4>
                             <hr>
@@ -117,6 +123,9 @@
     <script src="/js/main.js"></script>
     <script>
         document.getElementById("btnSubmit").addEventListener("click", getValue);
+    </script>
+    <script>
+        document.getElementById("btnReset").addEventListener("click", clearForm);
     </script>
 </body>
 </html>

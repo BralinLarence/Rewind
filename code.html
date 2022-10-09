@@ -100,13 +100,52 @@
                             // Show the alert box
                             document.getElementById("alert").classList.remove("invisible");
                         }
+
+                        //Clear string input
+                        //View function
+                        function clearForm()
+                        {
+                            document.getElementById("alert").classList.add("invisible");
+                            
+                            let clearString = []    
+                            clearString = "";
+                            document.getElementById("userString").value = clearString;  
+                        }
                     </code>
                     </pre>
                 </div>
                 <div class="col-lg-4">
-                    <p>The Code is structured in one function.</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that diplays an alert with a message of Hello World</p>
+                    <h5>Introduction</h5>
+                    <p>
+                        The Code is structured in three separate functions. Each function has its own responsibilities which makes 
+                        it easier to maintain and update the code base through it's life cycle. One function acts as our controller, the 
+                        other our model or logic, and the last one functions as our view or display code. 
+                    </p>
+                    <h5>The getValue() function</h5>
+                    <p>
+                        The first statement in the getValue() function gets the element with an id of "alert"
+                        and adds the classList.Add property and method of invisible. This hides the message until 
+                        we call the logic function of reversedString and the view function displayString. 
+                    </p>
+                    <h5>The reversedString() function</h5>
+                    <p>
+                        In this function we grab the input from the user which is passed as an argument.
+                        Next, a for loop is created. Inside the for loop the index is initialized by the 
+                        length of the string. The conditional is then set to have the index greater than or equal to zero. Lastly, the index
+                        is decremented until the loop reaches zero.
+                    </p>
+                    <h5>The displayString() function</h5> 
+                    <p>
+                        Here we get the element with an id of message, using a template string we created
+                        our display message. The second statement is required to remove the invisilble class from 
+                        the element with the alert id. This will allow our message to be displayed.
+                    </p>
+                    <h5>The clearForm() function</h5> 
+                    <p>
+                        This function clears the input field and the alert message after the Reset button is selected. 
+                        An empty string is assigned to the clearString array. Next, we assign the clearString
+                        array to the document.getElementById("userString").value expression. 
+                    </p>
                 </div>
 
             </div>
