@@ -20,13 +20,18 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/img/favicon.ico">
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lexend+Deca&display=swap" rel="stylesheet">
+
 </head>
 
 <body class="d-flex flex-column h-100">
     <!-- ==== Nav Section ==== -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="/img/BralinLarence-Brand-Header-Logo-1.svg" class="d-inline-block align-text-top" height="24" width="100">APP NAME</a>
+            <a class="navbar-brand brand-font" href="#">Rewind</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -55,14 +60,46 @@
     <!-- ==== Main Section ==== -->
     <main class="flex-shrink-0">
         <div class="container py-4 px-5 mt-5">
-            <h2 class="border-1 border-bottom border-dark">The Code for APP NAME</h2>
+            <h2 class="border-1 border-bottom border-dark">The Code for REWIND</h2>
             <div class="row row-cols-1 row-cols-md-2">
                 <div class="col-lg-8">
                     <pre class="line-numbers"><code class="language-javascript">
-                            // Call Hello World
-                            function HelloWorld() {
-                            alert("Hello World");
+                        //Get the values of the string
+                        //Controller function
+                        function getValue()
+                        {
+                            document.getElementById("alert").classList.add("invisible");
+
+                            let userString = document.getElementById("userString").value;
+
+                            let reversedString = reverseString(userString);
+
+                            displayString(reversedString);
+                        }
+
+                        //Reverse the string
+                        //Logic function
+                        function reverseString(_userString)
+                        {
+                            let reversedString = [];
+
+                            for(let index = _userString.length - 1; index >= 0; index--)
+                            {
+                                reversedString += _userString[index];
                             }
+
+                            return reversedString;
+                        }
+
+                        //Display the reversed string to the user
+                        //View function 
+                        function displayString(_reversedString)
+                        {
+                            //Write to thje page 
+                            document.getElementById("message").innerHTML =  `Your string reversed is: ${_reversedString}`;
+                            // Show the alert box
+                            document.getElementById("alert").classList.remove("invisible");
+                        }
                     </code>
                     </pre>
                 </div>

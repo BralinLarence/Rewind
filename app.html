@@ -15,8 +15,14 @@
 
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
-
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="/img/favicon.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lexend+Deca&display=swap" rel="stylesheet">
 
 </head>
 
@@ -24,7 +30,7 @@
     <!-- ==== Nav Section ==== -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="/img/BralinLarence-Brand-Header-Logo-1.svg" class="d-inline-block align-text-top" height="24" width="100">APP NAME</a>
+            <a class="navbar-brand brand-font" href="#">Rewind</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -53,7 +59,33 @@
     <!-- ==== Main Section ==== -->
     <main class="flex-shrink-0">
         <div class="container">
-
+            <div class="row row-cols-1 row-cols-lg-2 mt-5">
+                <div class="col border-1 border-end border-dark">
+                    <h1 class="display-5 fw-bold lh-1 mb-3">Rewind: A Coding Project</h1>
+                    <h4 class="lead pb-3 description-text-color">
+                        There and back again. A javascript coding exercise using arrays. Write a 
+                        program that displays a string in reverse. 
+                    </h4>
+                </div>
+                <div class="col">
+                    <h5 class="border-1 border-bottom border-dark">Enter a string to reverse</h5>
+                    <form class="row gx-3 gy-2" action="">
+                        <div class="col">
+                            <input id="userString" type="text" class="form-control" placeholder="Enter a string" aria-label="Enter a string">
+                        </div>
+                        <div class="col-12 mt-4">
+                            <button type="button" id="btnSubmit" class="btn btn-dark">Reverse Text</button>
+                        </div>
+                        <div class="alert alert-danger mt-5 invisible fade show" id="alert" role="alert">
+                            <h4 class="alert-heading">Well Done!</h4>
+                            <hr>
+                            <p class="mb-0" id="message">
+                                <!-- Insert a message here with javascript -->
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </main>
     <!-- ==== Footer Section ==== -->
@@ -83,5 +115,8 @@
         </script>
     <!-- Main JS -->
     <script src="/js/main.js"></script>
+    <script>
+        document.getElementById("btnSubmit").addEventListener("click", getValue);
+    </script>
 </body>
 </html>
